@@ -10,7 +10,7 @@
 :root {
     /*1. PAGE / GLOBAL BACKGROUND */
 
-  --bg-page: #f7f9fc;
+  --bg-page: #EEF1F5;
   --bg-primary: #ffffff;
   --bg-secondary: #f1f4f8;
   --bg-tertiary: #e9eef5;
@@ -50,21 +50,58 @@
     0.25s ease;
 
   --transition-smooth:
-    0.35s ease;
+    0.35s linear;
 
   --transition-slow:
     0.5s ease;
 
+    /* =====================================================
+     7. BORDER COLORS
+  ===================================================== */
+
+  --border-light: #eef1f5;
+  --border: #e4e9f0;
+  --border-dark: #d5dce6;
+
+  --border-hover: #cbd5e1;
+  --border-focus: #1f5ffc;
+
+  --border-white: rgba(255, 255, 255, 0.20);
+
+
 }
 
-
+.hideen{
+  display: none !important;
+}
 /* Basic body setup */
 body {
   font-family: Arial, sans-serif;
   background: var( --bg-page);
   color: #000;
 }
-
+/* Add_Expense_btn */
+#Add_Expense_btn{
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background: #2563eb;
+  color: var(--bg-primary);
+  border: 1px solid #3b82f6;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+#Add_Expense_btn:hover{
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+  transform: translateY(-5px);
+}
+/* Add_Expense_btn */
 /* navBar */
 nav{
   background-color:  #FBFBFB;
@@ -74,6 +111,9 @@ nav{
   justify-content: space-between;
   padding: 10px 20px;
   border-bottom: 1px solid #e7ebf1;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: var(--transition-smooth);
 }
 .menu-logo{
   display: flex;
@@ -127,6 +167,7 @@ nav{
   left: -20%;
   transition: var(--transition-smooth);
   border: 1px solid rgba(255, 255, 255, 0.10);
+  z-index: 999;
 }
 .side-menu-open{
   left: 0 !important;
@@ -179,3 +220,217 @@ nav{
 }
 /* side menu */
 /* navBar */
+/* Budget-overview */
+#Budget-overview{
+  display: grid;
+  grid-template-columns: 1fr 1fr  1fr 1fr;
+  padding: 50px;
+  gap: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-smooth);
+}
+.Budget-overview-cards-design{
+  background-color: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+.Budget-overview-cards-design i{
+  font-size: 69px;
+  color: var(--bg-primary);
+}
+.Total-Expense i{
+  color: #1f5ffc;
+}
+.Highest-Expense i{
+  color:  #ed4757;
+}
+.Budget-Month i{
+  color: #12ad77;
+}
+.Remaining-Budget i{
+  color:#7c3aed;
+}
+.Budget-overview-cards-design:hover{
+  background-color: var(--card-hover);
+  box-shadow: var(--card-shadow-hover);
+  border:1px solid var(--card-border-hover);
+}
+/* Budget-overview */
+
+/* dashboard_components*/
+#dashboard_components{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px 30px;
+  gap: 20px;
+}
+#chart-box{
+ background-color: var(--card-bg);
+ padding: 20px;
+ border-radius: var(--card-radius);
+ height: 400px;
+}
+#Note-Section{
+  background-color: #12ad77;
+}
+#Todo-list-Section{
+ background-color: #7c3aed;
+}
+#expense_list{
+  background-color: var(--card-bg);
+  grid-column: 1/3;
+  border-radius: var(--card-radius);
+}
+#recent_expense{
+  background-color: #ed4757;
+}
+/* AllExpenseList */
+#expense_list{
+  background-color: var(--card-bg);
+  grid-column: 1/3;
+  border-radius: var(--card-radius);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+/* expense_list_action_btn */
+.expense_list_action_btn{
+  display: flex;
+  gap: 10px;
+}
+.search_input{
+  position: relative;
+}
+.search_input input{
+  padding: 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid black;
+  padding-left: 30px;
+}
+.search_input i{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.expense_list_action_btn select{ 
+  border-radius: var(--radius-md);
+}
+/* expense_list_action_btn */
+/* expense_list_headings */
+.expense_list_headings{
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 2fr 1.5fr 1.5fr 0.5fr;
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  padding: 10px;
+
+}
+.list_headings_design{
+  font-weight: bold;
+}
+#AllExpenseList{
+   overflow-y: auto;
+  height:250px;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  border: 2px solid var(--border-dark);
+  border-top: none;
+  background-color: var(--bg-secondary);
+}
+.expsense{
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 2fr 1.5fr 1.5fr 0.5fr;
+  padding: 10px;
+  border-bottom:1px solid var(--border-dark);
+}
+.Total_expense{
+  display: flex;
+  padding: 10px;
+  border: 2px solid var(--border-dark);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  border-top: none;
+  justify-content: space-between
+}
+.Total_expense h3{
+  width: 50%;
+}
+.Expense_show_box_total{
+  width: 43% !important;
+}
+/* expense_list_headings */
+/* dashboard_components */
+
+/* AddExpense_section" */
+#AddExpense_section{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.72);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+.Add_box{
+  background-color: #020f25;
+  color: var(--bg-primary);
+  padding:40px  20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 400px;
+  border-radius:var(--card-radius) ;
+}
+.expen-label-des{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.expen-label-des h3{
+  padding-left: 5px;
+}
+.expen-label-des input , .expen-label-des select{
+  width: 100%;
+  border-radius: var(--radius-sm);
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid var(--border);
+}
+.expen-label-des input:focus , .expen-label-des select:focus{
+  border: 2px solid var(--border-focus);
+  outline: none;
+}
+.invalid-warning{
+  border-color: red !important;
+}
+.EmptyBoxText{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Add-expenses{
+  color: var(--bg-primary);
+  background: #3036E4;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+}

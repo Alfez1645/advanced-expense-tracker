@@ -9,6 +9,9 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Add expense button  -->
+     <button id="Add_Expense_btn"><i class="fa-solid fa-plus"></i>Add Expense</button>
+    <!-- Add expense button  -->
     <nav>
         <div class="menu-logo">
             <i class="fa-solid fa-bars sidebar-menu-btn"></i>
@@ -38,6 +41,138 @@
      </div>
     <!-- side menu -->
 
+    <!-- Budget Overview -->
+     <div id="Budget-overview">
+        <div class="Total-Expense Budget-overview-cards-design">
+            <i class="fa-solid fa-wallet"></i>
+            <div class="Total-Expense-content Budget-overview-cards-content">
+                <p>Total Expense</p>
+                <h1>$7000</h1>
+                <p>This Month</p>
+            </div>
+        </div>
+        <div class="Highest-Expense Budget-overview-cards-design">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <div class="Highest-Expense-content Budget-overview-cards-content">
+                <p>Highest Expense</p>
+                <h1>$7000</h1>
+                <p>This Month</p>
+            </div>
+        </div>
+        <div class="Budget-Month Budget-overview-cards-design ">
+            <i class="fa-solid fa-building-columns"></i>
+            <div class="Budget-Month-content Budget-overview-cards-content">
+                <p>the Budget</p>
+                <h1>$7000</h1>
+                <p>This Month</p>
+            </div>
+        </div>
+        <div class="Remaining-Budget Budget-overview-cards-design">
+            <i class="fa-solid fa-piggy-bank"></i>
+            <div class="Remaining-Budget-content Budget-overview-cards-content">
+                <p>Remaining Budget</p>
+                <h1>$7000</h1>
+                <p>This Month</p>
+            </div>
+        </div>
+     </div>
+    <!-- Budget Overview -->
+    <!-- Dashboard Components -->
+    <div id="dashboard_components">
+        <div id="chart-box">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div id="Note-Section"></div>
+        <div id="Todo-list-Section"></div>
+        <div id="expense_list">
+            <div class="expense_list_action_btn">
+                <div class="search_input">
+                    <input type="text" placeholder="Search Expense">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <select name="Categories_select" id="Categories_wise">
+                    <option value="All Categories">All Categories</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Education">Education</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Others">Others</option>
+                 </select>
+                 <select name="time_selct" id="time_selct">]
+                    <option value="This Months">This Months</option>
+                    <option value="Today">Today</option>
+                    <option value="Yesterday">Yesterday</option>
+                    <option value="This week">This week</option>
+                 </select>
+                 <select name="Sort_by" id="Sort_by">
+                    <option value="latest">Sort By:Latest</option>
+                    <option value="latest">Sort By:Old</option>
+                 </select>
+            </div>
+            <div class="expnese_box">
+                <div class="expense_list_headings">
+                <div class="list_headings_design">#</div>
+                <div class="list_headings_design">Name</div>
+                <div class="list_headings_design">Category</div>
+                <div class="list_headings_design">Amount</div>
+                <div class="list_headings_design">Date</div>
+                <div class="list_headings_design">Action</div>
+            </div>
+            <div id="AllExpenseList">
+                <!-- all expnese list  -->
+            </div>
+            <div class="Total_expense">
+                <h3>Total Expense</h3>
+                <h3 class="Expense_show_box_total">$7000</h3>
+            </div>
+            </div>
+        </div>
+        <div id="recent_expense"></div>
+    </div>
+    <!-- Dashboard Components -->
+
+
+    <!-- Add expense box -->
+     <div id="AddExpense_section" class="hideen">
+        <div class="Add_box">
+            <h2>Add New Expensive</h2>
+            <label class="expen-name expen-label-des">
+                <h3>Name</h3>
+                <input type="text" placeholder="Enter name of Expenses">
+            </label>
+            <label class="expen-amount expen-label-des">
+                <h3>Amount</h3>
+                <inpuT type="number" min="0" placeholder="Enter Amount">
+            </label>
+            <label class="expen-category expen-label-des">
+                <h3>category</h3>
+                <select>
+                    <option value="select Category" disabled selected>Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Education">Education</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Others">Others</option>
+                </select>
+            </label>
+            <label class="expen-date expen-label-des">
+                <h3>Date</h3>
+                <inpuT type="date" placeholder="Enter date" >
+            </label>
+            <button class="Add-expenses">Add Expensive</button>
+        </div>
+     </div>
+    <!-- Add expense box -->
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/animation.js"></script>
+    <script type="module" src="/js/addExpenseBtn.js"></script>
+    <script type="module" src="/js/addexpense.js"></script>
     <script src="/js/side-bar-menu.js"></script>
 </body>
 </html>
