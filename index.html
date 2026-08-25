@@ -38,6 +38,21 @@
             <button><i class="fa-solid fa-chart-simple"></i>Reports</button>
             <button><i class="fa-solid fa-gear"></i>Settings</button>
         </div>
+        <div class="monthlyBudget">
+            <div class="budgetheading">
+                <h3>Monthly Budget</h3>
+            </div>
+            <div class="MenuBudgetreal">
+                <i class="fa-solid fa-indian-rupee-sign ruppeSign"></i>
+                 <h2 class="budgetTex">0</h2><i class="fa-solid fa-pen-to-square editbudget" ></i>
+                <div class="budgetinputbox hidebudgetbox"><input type="number" id="budgetInput"><i class="fa-solid fa-x budgetcanclebtn"></i><i class="fa-solid fa-check budgetcomebtn"></i></div>
+            </div>
+            <p>Budget</p>
+            <div class="spentremain">
+                <div class="menuspent"><div class="flex"><i class="fa-solid fa-indian-rupee-sign "></i><h2 >0</h2></div><p>Spent</p></div>
+                <div class="menuremian "><div class=" flex"><i class="fa-solid fa-indian-rupee-sign "></i><h2 c>0</h2></div><p>Remaining</p></div>
+            </div>
+        </div>
      </div>
     <!-- side menu -->
 
@@ -98,7 +113,7 @@
          <!-- Todo list section -->
         <div id="Todo-list-Section">
             <div class="To_Do_heading">
-                <h3>TO do</h3>
+                <h3>To do</h3>
             </div>
             <ul class="all_To_Do">
 
@@ -157,27 +172,7 @@
         <div id="recent_expense">
             <h3>Recent Expense</h3>
             <div class="allrecentexpense">
-                <div class="singlerecentexpense">
-                    <div class="nameDate">
-                        <h4>Food</h4>
-                        <p>Date</p>
-                    </div>
-                    <div class="recentamout">250</div>
-                </div>
-                <div class="singlerecentexpense">
-                    <div class="nameDate">
-                        <h4>Food</h4>
-                        <p>Date</p>
-                    </div>
-                    <div class="recentamout">250</div>
-                </div>
-                <div class="singlerecentexpense">
-                    <div class="nameDate">
-                        <h4>Food</h4>
-                        <p>Date</p>
-                    </div>
-                    <div class="recentamout">250</div>
-                </div>
+            <!-- all recent -->
             </div>
           </div>
          <!-- recent expense -->
@@ -215,6 +210,7 @@
                 <inpuT type="date" placeholder="Enter date" >
             </label>
             <button class="Add-expenses">Add Expensive</button>
+            <button class="Back-">Add Expensive</button>
         </div>
      </div>
     <!-- Add expense box -->

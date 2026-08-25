@@ -1,7 +1,7 @@
 /* Mobile */
 @media (max-width: 767px){
     nav{
-        padding: 5px;
+        padding: 10px;
     }
     .menu-logo{
         font-size: 16px;
@@ -65,23 +65,24 @@
         grid-template-columns: 1fr ;
         grid-template-rows: auto 1fr 1fr 1fr 1fr;
         height: auto;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 10px;
     }
     #chart-box{
         height:100%;
-        grid-column: 1/2;
     }
-    #Todo-list-Section{
-        width: 100%;
-        grid-column: 1/2;
+    .notes_heading , .To_Do_heading , #recent_expense h3{
+        padding: 10px;
+        font-size: 12px;
     }
-    #Note-Section{
-        width: 100%;
-        grid-column: 1/2;
+    .all_notes h2 , .all_To_Do h2 , .allrecentexpense h2{
+        font-size:16px ;
     }
-    #recent_expense{
-        grid-column: 1/2;
+    #Note-Section button , #Todo-list-Section button{
+        font-size: 16px;
     }
-
     /* .expsense */
     #expense_list{
         grid-column: 1/2;
@@ -97,12 +98,13 @@
     .search_input input{
         width: 100%;
         padding: 5px;
-                padding-left: 30px;
+        padding-left: 30px;
     }
     .search_input i{
         top: 5px;
         left: 5px;
-    }      
+    }   
+
 /* expense_list_action_btn */
     .expense_list_headings{
         display: none;
@@ -140,7 +142,24 @@
         display: flex;
         justify-content: end;
     }
-    
+    #chart-box,
+    #Todo-list-Section,
+    #Note-Section,
+    #recent_expense,
+    #expense_list {
+        grid-column: 1;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    /* budget box */
+    .spentremain{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    /* budget box */
 }
 
 /* Tablet */
@@ -177,11 +196,7 @@
         height: auto;
     }
     #chart-box{
-         height: 200px;
-         /* width: 400px; */
-    }
-    #Note-Section{
-        /* height: 200px */
+        height: 200px;
     }
     #recent_expense{
         grid-row: 1/2;
@@ -192,4 +207,15 @@
         display: flex;
     }
     /* expense list box */
+
+    .notes_heading , .To_Do_heading , #recent_expense h3{
+        padding: 10px;
+        font-size: 12px;
+    }
+    .all_notes h2 , .all_To_Do h2 , .allrecentexpense h2{
+        font-size:16px ;
+    }
+    #Note-Section button , #Todo-list-Section button{
+        font-size: 16px;
+    }
 }

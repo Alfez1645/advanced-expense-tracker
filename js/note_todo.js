@@ -165,6 +165,12 @@ export function recentExpense(expense){
     const allrecentexpense = document.querySelector(".allrecentexpense");
 
     allrecentexpense.innerHTML  = "";
+
+    if(Allexpense.length === 0){
+        allrecentexpense.innerHTML  = `<h2>No Recent Expense <h2>`
+        allrecentexpense.classList.add("alltodo_empty");
+        return;
+    }
     
     const recentExpenses = expense.slice(-5).reverse();
 
