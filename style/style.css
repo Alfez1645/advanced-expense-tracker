@@ -741,3 +741,13 @@ nav{
   border: none;
   cursor: pointer;
 }
+
+.Back-btn{
+  color: var(--bg-primary);
+  background: #3036E4;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+}

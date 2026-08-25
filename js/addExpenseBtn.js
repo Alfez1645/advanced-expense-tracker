@@ -4,6 +4,7 @@ import { recentExpense } from "./note_todo.js";
 
 const AddExpensebtn = document.querySelector("#Add_Expense_btn");
 const AddExpense_section = document.querySelector("#AddExpense_section");
+const Back_btn_add_expense = document.querySelector(".Back-btn-add_expense");
 
 // 
 const Name = document.querySelector(".expen-name input");
@@ -69,6 +70,18 @@ AddExpense_section.addEventListener("click" , (e) =>{
     }
     
 })
+Back_btn_add_expense.addEventListener("click" , (e) =>{
+
+    AddExpense_section.classList.add("hidden");
+    Name.value = "";
+    amount.value = "";
+    category.selectedIndex = 0;
+    date.value = "";
+    Name.classList.remove("invalid-warning");
+    amount.classList.remove("invalid-warning");
+    category.classList.remove("invalid-warning");
+    date.classList.remove("invalid-warning");
+});
 // 
 let isEdit = false;
 let index = null;
@@ -118,7 +131,7 @@ let allExpenses = JSON.parse(localStorage.getItem("AllExpensive")) || [];
         Budget_overView_card_Update();
         editBtn()
         AddExpense_section.classList.add("hidden");
-        let isEdit = false;
+        isEdit = false;
     }
     else{
         

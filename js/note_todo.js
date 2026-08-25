@@ -13,6 +13,10 @@ addnotes_box.addEventListener("click" , (e) =>{
 
     }
 });
+const Back_btn_note = document.querySelector(".Back-btn-note");
+Back_btn_note.addEventListener("click" , () =>{
+    addnotes_box.classList.add("hidden");
+})
 
 addnotes_box_btn.addEventListener("click" , () =>{
     let notesdata = JSON.parse(localStorage.getItem("notes")) || [];
@@ -77,6 +81,7 @@ const Todo_list_Section = document.querySelector("#Todo-list-Section button");
 const addtodo_box = document.querySelector(".addtodo");
 const addtodo_box_btn = document.querySelector(".addtodobox button");
 
+
 Todo_list_Section.addEventListener("click" , () =>{
     addtodo_box.classList.remove("hidden");
 })
@@ -88,6 +93,10 @@ addtodo_box.addEventListener("click" , (e) =>{
     }
 });
 
+const Back_btn_Todo = document.querySelector(".Back-btn-todo");
+Back_btn_Todo.addEventListener("click" , () =>{
+    addtodo_box.classList.add("hidden");
+})
 
 addtodo_box_btn.addEventListener("click" , () =>{
     let tasksData = JSON.parse(localStorage.getItem("alltask")) || [];
@@ -144,7 +153,7 @@ function updatetask(){
 
         checkbox.addEventListener("change", () => {
             tasksData[index].completed = checkbox.checked;
-            localStorage.setItem("alltask", JSON.stringify(tasksd4));
+            localStorage.setItem("alltask", JSON.stringify(tasksData));
         });
 
         deleteBtn.addEventListener("click", () => {

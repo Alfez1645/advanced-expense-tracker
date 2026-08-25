@@ -26,7 +26,7 @@ export function Budget_overView_card_Update(){
     if (budget === null || budget === "") {
         budget = 0;
     }
-    let remain = budget
+    let remain = budget  - total
 
     TotalExpense.innerHTML = `<i class="fa-solid fa-indian-rupee-sign rupay_size"></i>`;
     TotalExpense.append(total);
