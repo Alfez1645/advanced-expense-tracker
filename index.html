@@ -79,11 +79,34 @@
     <!-- Budget Overview -->
     <!-- Dashboard Components -->
     <div id="dashboard_components">
+        <!-- chart bar -->
         <div id="chart-box">
             <canvas id="myChart"></canvas>
         </div>
-        <div id="Note-Section"></div>
-        <div id="Todo-list-Section"></div>
+        <!-- chart bar -->
+        <!-- note section -->
+        <div id="Note-Section">
+            <div class="notes_heading">
+                <h3>Notes</h3>
+            </div>
+            <div class="all_notes">
+            <!-- notes -->
+            </div>
+            <button>Add notes</button>
+        </div>
+        <!-- note section -->
+         <!-- Todo list section -->
+        <div id="Todo-list-Section">
+            <div class="To_Do_heading">
+                <h3>TO do</h3>
+            </div>
+            <ul class="all_To_Do">
+
+            </ul>
+            <button>Add notes</button>
+        </div>
+         <!-- Todo list section -->
+           <!-- expense section -->
         <div id="expense_list">
             <div class="expense_list_action_btn">
                 <div class="search_input">
@@ -129,13 +152,41 @@
             </div>
             </div>
         </div>
-        <div id="recent_expense"></div>
+        <!-- expense section -->
+        <!-- recent expense -->
+        <div id="recent_expense">
+            <h3>Recent Expense</h3>
+            <div class="allrecentexpense">
+                <div class="singlerecentexpense">
+                    <div class="nameDate">
+                        <h4>Food</h4>
+                        <p>Date</p>
+                    </div>
+                    <div class="recentamout">250</div>
+                </div>
+                <div class="singlerecentexpense">
+                    <div class="nameDate">
+                        <h4>Food</h4>
+                        <p>Date</p>
+                    </div>
+                    <div class="recentamout">250</div>
+                </div>
+                <div class="singlerecentexpense">
+                    <div class="nameDate">
+                        <h4>Food</h4>
+                        <p>Date</p>
+                    </div>
+                    <div class="recentamout">250</div>
+                </div>
+            </div>
+          </div>
+         <!-- recent expense -->
     </div>
     <!-- Dashboard Components -->
 
 
     <!-- Add expense box -->
-     <div id="AddExpense_section" class="hideen">
+     <div id="AddExpense_section" class="hidden">
         <div class="Add_box">
             <h2>Add New Expensive</h2>
             <label class="expen-name expen-label-des">
@@ -168,11 +219,32 @@
      </div>
     <!-- Add expense box -->
 
+    <!-- add  notes box -->
+      <div class="addnotes hidden">
+        <div class="addnotesbox">
+            <textarea name="" id=""></textarea>
+            <button>Add notes</button>
+        </div>
+        </div>
+     <!-- add notes box -->
+       <!-- add quick notes box -->
+        <!-- add to d box -->
+         <div class="addtodo  hidden">
+        <div class="addtodobox">
+            <textarea ></textarea>
+            <button>Add task</button>
+        </div>
+        <!-- add to d box -->
+
+
+
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/js/animation.js"></script>
     <script type="module" src="/js/addExpenseBtn.js"></script>
     <script type="module" src="/js/addexpense.js"></script>
-    <script src="/js/side-bar-menu.js"></script>
+    <script type="module" src="/js/side-bar-menu.js"></script>
+    <script type="module" src="/js/note_todo.js"></script>
+    <script type="module" src="/js/Budget-overview-cards.js"></script>
 </body>
 </html>

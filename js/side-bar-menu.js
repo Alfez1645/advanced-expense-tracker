@@ -9,16 +9,32 @@ menuCloseBtn.addEventListener("click" ,()=>{
     sidemenu.classList.remove("side-menu-open");
 });
 
+export function barUpdate(){
+   let allExpenses = JSON.parse(localStorage.getItem("AllExpensive")) || [];
+
+const categoryTotal = {};
+
+allExpenses.forEach(expense => {
+    if (categoryTotal[expense.Category]) {
+        categoryTotal[expense.Category] += expense.Amount;
+    } else {
+        categoryTotal[expense.Category] = expense.Amount;
+    }
+});
+const labels = Object.keys(categoryTotal);
+const values = Object.values(categoryTotal);
+
  const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: labels,
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
+        label: 'All Expense',
+        data: values,
+        borderWidth: 1,
+        backgroundColor: ["#6366F1","#22C55E","#F59E0B","#EF4444","#06B6D4","#A855F7","#F97316"]
       }]
     },
     options: {
@@ -29,3 +45,5 @@ menuCloseBtn.addEventListener("click" ,()=>{
       }
     }
   });
+}
+barUpdate()

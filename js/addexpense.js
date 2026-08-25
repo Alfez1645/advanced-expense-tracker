@@ -1,4 +1,6 @@
 import {editBtn  } from "./addExpenseBtn.js";
+import { Budget_overView_card_Update } from "./Budget-overview-cards.js";
+
 export function ExpenseAddInBox(data){
     const AllExpenseList = document.querySelector("#AllExpenseList");
     AllExpenseList.innerHTML = "";
@@ -34,45 +36,10 @@ export function ExpenseDelete(){
             allExpenses.splice(index, 1);
             localStorage.setItem("AllExpensive" , JSON.stringify(allExpenses));
             ExpenseAddInBox(allExpenses);
-
-            editBtn()
+            editBtn();
+            Budget_overView_card_Update();
             
         })
     })
 }
 ExpenseDelete()
-
-// export function editBtn(){
-//     const AddExpense_section = document.querySelector("#AddExpense_section");
-//     const AddExpenseBoxBtn = document.querySelector(".Add-expenses");
-//     // 
-// const Name = document.querySelector(".expen-name input");
-// const amount = document.querySelector(".expen-amount input");
-// const category = document.querySelector(".expen-category select");
-// const date = document.querySelector(".expen-date input");
-// // 
-//     const alleditBtnbtn = document.querySelectorAll(".editBtn");
-
-//     alleditBtnbtn.forEach(btn =>{
-        
-//         // let isEdit = false;
-
-//         let allExpenses = JSON.parse(localStorage.getItem("AllExpensive")) || [];
-
-//         btn.addEventListener("click" , () =>{
-
-//             AddExpenseBoxBtn.innerHTML = "Update expense"
-
-//             let index = btn.dataset.index
-//             Name.value = allExpenses[index].Title;
-//             amount.value = allExpenses[index].Amount;
-//             category.value = allExpenses[index].Category;
-//             date.value = allExpenses[index].Date;
-
-//             AddExpense_section.classList.remove("hideen");
-//             isEdit = true;
-        
-//         })
-//     })
-// }
-// editBtn()

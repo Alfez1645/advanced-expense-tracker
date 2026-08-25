@@ -1,4 +1,6 @@
 import { ExpenseAddInBox } from "./addexpense.js";
+import { Budget_overView_card_Update } from "./Budget-overview-cards.js";
+import { recentExpense } from "./note_todo.js";
 
 const AddExpensebtn = document.querySelector("#Add_Expense_btn");
 const AddExpense_section = document.querySelector("#AddExpense_section");
@@ -50,12 +52,12 @@ function validateExpense(){
 
 AddExpensebtn.addEventListener("click" , () =>{
     AddExpenseBoxBtn.innerHTML = `Add Expense`
-    AddExpense_section.classList.remove("hideen");
+    AddExpense_section.classList.remove("hidden");
 });
 
 AddExpense_section.addEventListener("click" , (e) =>{
-    if(e.target === AddExpense_section){
-        AddExpense_section.classList.add("hideen");
+    if(window.innerWidth > 767 && e.target === AddExpense_section ){
+        AddExpense_section.classList.add("hidden");
         Name.value = "";
         amount.value = "";
         category.selectedIndex = 0;
@@ -89,13 +91,14 @@ export function editBtn(){
             category.value = allExpenses[index].Category;
             date.value = allExpenses[index].Date;
 
-            AddExpense_section.classList.remove("hideen");
+            AddExpense_section.classList.remove("hidden");
             isEdit = true;
         })  
         })
 }  
 editBtn()
 // 
+
 const AddExpenseBoxBtn = document.querySelector(".Add-expenses");
 
 AddExpenseBoxBtn.addEventListener("click" , ()=>{
@@ -112,8 +115,9 @@ let allExpenses = JSON.parse(localStorage.getItem("AllExpensive")) || [];
 
         localStorage.setItem("AllExpensive" , JSON.stringify(allExpenses));
         ExpenseAddInBox(allExpenses);
+        Budget_overView_card_Update();
         editBtn()
-        AddExpense_section.classList.add("hideen");
+        AddExpense_section.classList.add("hidden");
         let isEdit = false;
     }
     else{
@@ -127,8 +131,10 @@ let allExpenses = JSON.parse(localStorage.getItem("AllExpensive")) || [];
         localStorage.setItem("AllExpensive" , JSON.stringify(allExpenses));
     
         ExpenseAddInBox(allExpenses);
-        editBtn()
-        AddExpense_section.classList.add("hideen");
+        recentExpense(allExpenses);
+        Budget_overView_card_Update();
+        editBtn();
+        AddExpense_section.classList.add("hidden");
         Name.value = "";
         amount.value = "";
         category.selectedIndex = 0;
